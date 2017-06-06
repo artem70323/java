@@ -82,7 +82,7 @@ public class Bankomat {
         System.out.println("\nЧто будете делать?\n1 - загружать деньги, 2 - снимать деньги, "
                 + "3 - узнаю баланс, 4 - пойду домой");
         while (!scan.hasNextInt()) {
-            System.out.println("Неправильный ввод! Введите 1, 2 или 3!");
+            System.out.println("Неправильный ввод! Введите 1, 2, 3 или 4!");
             scan.next();
         }
         int x = scan.nextInt();
@@ -133,13 +133,25 @@ public class Bankomat {
         scan.nextLine();
         switch (x) {
             case 20:
-                setMoney_20_plus(y);
+                if (money_20 + y >= 0) {
+                    setMoney_20_plus(y);
+                } else {
+                    System.out.println("Вы не можете изъять столько купюр!");
+                }
                 break;
             case 50:
-                setMoney_50_plus(y);
+                if (money_50 + y >= 0) {
+                    setMoney_50_plus(y);
+                } else {
+                    System.out.println("Вы не можете изъять столько купюр!");
+                }
                 break;
             case 100:
-                setMoney_100_plus(y);
+                if (money_100 + y >= 0) {
+                    setMoney_100_plus(y);
+                } else {
+                    System.out.println("Вы не можете изъять столько купюр!");
+                }
                 break;
         }
         vyvod();
