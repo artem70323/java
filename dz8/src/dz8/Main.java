@@ -1,10 +1,10 @@
 package dz8;
 
 import java.text.ParseException;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+import java.util.TimeZone;
 
 public class Main {
 
@@ -58,25 +58,29 @@ public class Main {
 
     public void averageAge() {
 
+        /* интересная особенность: если указать год рождения 1939, то возраст увеличит на 1 день,
+        хотя 1940 и 1938 год работают как надо
+         */
+        TimeZone.setDefault(TimeZone.getTimeZone("GMT+0"));
+        //программа может некорректно определять часовой пояс системы, с консоли должно работать как надо
         long averageAge;
         long age = 0;
+        Date today = new Date();
+        
         for (int i = 0; i < kolStud; i++) {
-
-            Date today = new Date();
             age += (today.getTime() - student[i].getBirthday().getTime());
         }
 
-        averageAge = age / kolStud;         //средний возраст в миллисекундах
-        Date averAge = new Date(averageAge);        
-
+        averageAge = age / kolStud;     //средний возраст в миллисекундах
+        Date averAge = new Date(averageAge);
         GregorianCalendar calendar = new GregorianCalendar();
         calendar.setTime(averAge);
         System.out.println("\nСредний возраст студентов:");
-        System.out.print(calendar.get(Calendar.YEAR) - 1970 + averageAge2(calendar.get(Calendar.YEAR) - 1970, " год ", " года ", " лет "));
-        System.out.print(calendar.get(Calendar.MONTH) + averageAge2(calendar.get(Calendar.MONTH), " месяц ", " месяца ", " месяцев "));
-        System.out.print(calendar.get(Calendar.DAY_OF_MONTH) - 1 + averageAge2(calendar.get(Calendar.DAY_OF_MONTH) - 1, " день ", " дня ", " дней "));
-        System.out.print(calendar.get(Calendar.HOUR_OF_DAY) + averageAge2(calendar.get(Calendar.HOUR_OF_DAY), " час ", " часа ", " часов "));
-        System.out.println(calendar.get(Calendar.MINUTE) + averageAge2(calendar.get(Calendar.MINUTE), " минута ", " минуты ", " минут "));
+        System.out.print(calendar.get(GregorianCalendar.YEAR) - 1970 + averageAge2(calendar.get(GregorianCalendar.YEAR) - 1970, " год ", " года ", " лет "));
+        System.out.print(calendar.get(GregorianCalendar.MONTH) + averageAge2(calendar.get(GregorianCalendar.MONTH), " месяц ", " месяца ", " месяцев "));
+        System.out.print(calendar.get(GregorianCalendar.DAY_OF_MONTH) - 1 + averageAge2(calendar.get(GregorianCalendar.DAY_OF_MONTH) - 1, " день ", " дня ", " дней "));
+        System.out.print(calendar.get(GregorianCalendar.HOUR_OF_DAY) + averageAge2(calendar.get(GregorianCalendar.HOUR_OF_DAY), " час ", " часа ", " часов "));
+        System.out.println(calendar.get(GregorianCalendar.MINUTE) + averageAge2(calendar.get(GregorianCalendar.MINUTE), " минута ", " минуты ", " минут "));
     }
 
     public static String averageAge2(int year, String str1, String str2, String str3) {
