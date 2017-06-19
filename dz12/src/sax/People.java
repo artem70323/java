@@ -50,7 +50,7 @@ public class People {
     
     @Override
     public String toString() {
-        return "Element [id=" + id + ", name=" + name + ", surname=" + surname + ", age="
+        return "\nElement [id=" + id + ", name=" + name + ", surname=" + surname + ", age="
                 + age + ", isDegree=" + isDegree + "]";
     }
 

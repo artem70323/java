@@ -11,6 +11,7 @@ public class Sax extends DefaultHandler {
     String thisElement = "";
     ArrayList<People> list = new ArrayList<>();
     People peop;
+    Root root = new Root();
     boolean skipName = false;   //проверка, чтобы первое "name" не занесло в People
 
     public static void main(String[] args) {
@@ -22,12 +23,10 @@ public class Sax extends DefaultHandler {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return;
-        }
-        Root r = new Root();
+        }        
 
-        for (People e : saxp.list) {
-            System.out.println(e.toString());
-        }
+        saxp.root.setPeople(saxp.list);
+        System.out.println(saxp.root);
     }
     
     @Override
@@ -96,6 +95,7 @@ public class Sax extends DefaultHandler {
                 if (skipName) {
                     peop.setName(new String(ch, start, length));
                 } else {
+                    root.setName(new String(ch, start, length));
                     skipName = true;
                 }
                 break;
