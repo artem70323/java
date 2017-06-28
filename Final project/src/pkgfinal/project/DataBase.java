@@ -11,7 +11,7 @@ public class DataBase {
         public static DataBase dataBase = new DataBase();
     }
 
-    public static DataBase getInstance() {
+    public static DataBase getDataBase() {
         return SingletonHolder.dataBase;
     }
 
