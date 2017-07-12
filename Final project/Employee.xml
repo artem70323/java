@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <name>Calendar of birthdays</name>
+    <location>Minsk</location>
+    <baseSalary>2500000</baseSalary>
+    <employees>
+        <id>0</id>
+        <name>Ivan Ivanov</name>
+        <degree>FTT</degree>
+        <dateOfBirth>2004-10-25</dateOfBirth>
+        <yearEperience>20</yearEperience>
+        <emails>2342342@gmail.com</emails>
+        <emails>ssdfdf@gmail.com</emails>
+        <visible>true</visible>
+    </employees>
+    <employees>
+        <id>1</id>
+        <name>Alex Petrov</name>
+        <degree>PPP</degree>
+        <dateOfBirth>1998-03-24</dateOfBirth>
+        <yearEperience>15</yearEperience>
+        <emails>sgasdg@gmail.com</emails>
+        <emails>aaaaasfs@gmail.com</emails>
+        <emails>bbbesfwef@gmail.com</emails>
+        <visible>true</visible>
+    </employees>
+    <employees>
+        <id>2</id>
+        <name>Elena Sergeevna</name>
+        <degree>FTT</degree>
+        <dateOfBirth>1999-05-02</dateOfBirth>
+        <yearEperience>10</yearEperience>
+        <emails>asdfsadf@gmail.com</emails>
+        <emails>sdfdsfsd@gmail.com</emails>
+        <visible>true</visible>
+    </employees>
+    <employees>
+        <id>3</id>
+        <name>Olga Hlkdkfjj</name>
+        <degree>FTT</degree>
+        <dateOfBirth>1995-12-10</dateOfBirth>
+        <yearEperience>34</yearEperience>
+        <emails>5453242@gmail.com</emails>
+        <emails>sdfsdfasd@gmail.com</emails>
+        <visible>true</visible>
+    </employees>
+    <employees>
+        <id>4</id>
+        <name>Sergei Dfsdkjd</name>
+        <degree>PPP</degree>
+        <dateOfBirth>2005-05-04</dateOfBirth>
+        <yearEperience>12</yearEperience>
+        <emails>1111@mail.ru</emails>
+        <emails>222@mail.com</emails>
+        <visible>true</visible>
+    </employees>
+</root>

@@ -1,0 +1,68 @@
+{
+  "name": "Calendar of birthdays",
+  "location": "Minsk",
+  "baseSalary": 2500000,
+  "employees": [
+      {
+        "id": 0,
+        "name": "Ivan Ivanov",
+        "degree": "FTT",
+        "dateOfBirth": "2004-10-25",
+        "yearEperience": 20,
+        "emails": [
+    		  "2342342@gmail.com",
+     		  "ssdfdf@gmail.com"
+     	 ],
+         "visible": true
+      },
+      {
+        "id": 1,
+        "name": "Alex Petrov",
+        "degree": "PPP",
+        "dateOfBirth": "1998-03-24",
+        "yearEperience": 15,
+        "emails": [
+    		  "sgasdg@gmail.com",
+     		  "aaaaasfs@gmail.com",
+     		  "bbbesfwef@gmail.com"
+     	 ],
+         "visible": true
+      },
+      {
+        "id": 2,
+        "name": "Elena Sergeevna",
+        "degree": "FTT",
+        "dateOfBirth": "1999-05-02",
+        "yearEperience": 10,
+        "emails": [
+    		  "asdfsadf@gmail.com",
+     		  "sdfdsfsd@gmail.com"
+     	 ],
+         "visible": true
+      },
+      {
+        "id": 3,
+        "name": "Olga Hlkdkfjj",
+        "degree": "FTT",
+        "dateOfBirth": "1995-12-10",
+        "yearEperience": 34,
+        "emails": [
+    		  "5453242@gmail.com",
+     		  "sdfsdfasd@gmail.com"
+     	 ],
+         "visible": true
+      },
+      {
+        "id": 4,
+        "name": "Sergei Dfsdkjd",
+        "degree": "PPP",
+        "dateOfBirth": "2005-05-04",
+        "yearEperience": 12,
+        "emails": [
+    		  "1111@mail.ru",
+     		  "222@mail.com"
+     	 ],
+         "visible": true
+      }
+    ]
+}
