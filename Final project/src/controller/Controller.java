@@ -24,11 +24,9 @@ public class Controller {
     private static final String DATA = "Выберите поиск по дню - 1, "
             + "по месяцу - 2, по году - 3 или по дате - 4";
 
-    public void startProject() throws InterruptedException {
+    public void startProject() {
 
         download();
-        Thread.sleep(2000);
-        cycle();
     }
 
     //скачка и парсинг файла
@@ -56,8 +54,14 @@ public class Controller {
         downloadFile.setParserThread(parserThread);
         parserThread.start();   //начинаем первым, потому что он спит изначально
         downloadFile.start();
+        try {
+            parserThread.join();
+        } catch (InterruptedException ex) {
+            view.View.print(ex.getMessage());
+        }
+        cycle();
     }
-    
+
     //распечатка сотрудников
     private void printEmployees() {
         view.View.print(baseOfEmployees);
@@ -89,12 +93,12 @@ public class Controller {
 
     //юбиляры
     private void jubilee() {
-        Jubilee.jubilee();
+        Jubilee.jubilee(baseOfEmployees);
     }
     
     //средний возраст сотрудников
     private void averAge() {
-        AverageAge.averageAge();
+        AverageAge.averageAge(baseOfEmployees);
     }
     
     //поиск сотрудников
@@ -131,7 +135,7 @@ public class Controller {
             }
             int scanDay = scan.nextInt();
             if (0 < scanDay && scanDay <= 31) {
-                SearchEmployee.searchDay(scanDay);
+                SearchEmployee.searchDay(scanDay, baseOfEmployees);
                 return;
             }
         } while (true);
@@ -146,7 +150,7 @@ public class Controller {
             }
             int scanMonth = scan.nextInt();
             if (0 < scanMonth && scanMonth <= 12) {
-                SearchEmployee.searchMonth(scanMonth);
+                SearchEmployee.searchMonth(scanMonth, baseOfEmployees);
                 return;
             }
         } while (true);
@@ -159,14 +163,14 @@ public class Controller {
             scan.next();
         }
         int scanYear = scan.nextInt();
-        SearchEmployee.searchYear(scanYear);
+        SearchEmployee.searchYear(scanYear, baseOfEmployees);
     }
     
     private void searchDate() {
-       view.View.print("Введите дату в формате dd MM yyyy");
+        view.View.print("Введите дату в формате dd MM yyyy");
         scan.nextLine();
         String scanData = scan.nextLine();
-        SearchEmployee.searchDate(scanData);
+        SearchEmployee.InnerDate.searchDate(scanData, baseOfEmployees);
     }
 
 }

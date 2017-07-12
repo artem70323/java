@@ -10,9 +10,9 @@ import model.baseOfEmployees.Employee;
 //поиск среднего возраста сотрудников
 public class AverageAge {
 
-    public static void averageAge() {
+    public static void averageAge(BaseOfEmployees baseOfEmployees) {
         //получаем сотрудников
-        Set<Employee> set = BaseOfEmployees.getInstance().getEmployees();
+        Set<Employee> set = baseOfEmployees.getEmployees();
         int size = set.size();
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+0"));
         //программа может некорректно определять часовой пояс системы, с консоли должно работать как надо

@@ -4,7 +4,7 @@ import java.util.TreeSet;
 
 public class BaseOfEmployees {
 
-    public BaseOfEmployees() {
+    private BaseOfEmployees() {
     }
 
     private static class SingletonHolder {

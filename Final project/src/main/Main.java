@@ -8,7 +8,7 @@ public class Main {
 
         try {
             new Controller().startProject();
-        } catch (InterruptedException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
