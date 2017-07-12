@@ -14,6 +14,14 @@ import org.w3c.dom.NodeList;
 //System.out.println оставил для тестов
 public class ParseXml extends ParserThread {
     
+    //анонимный класс
+    Thread thread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            parse();
+        }
+    });
+    
     @Override
     public void parse() {
         

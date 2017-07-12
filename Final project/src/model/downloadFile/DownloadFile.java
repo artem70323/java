@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Scanner;
 import model.parseFile.ParserThread;
 
 public class DownloadFile extends Thread {
     
+    Scanner scan = new Scanner(System.in);
     private ParserThread parserThread;
     private String link;
     
@@ -69,7 +69,24 @@ public class DownloadFile extends Thread {
         } catch (IOException ex) {
             view.View.print("Ошибка " + ex.getMessage());
             view.View.print("Проверьте подключение к интернету");
-            System.exit(0);
+            boolean bool = true;
+            do {
+                view.View.print("Попробовать перекачать - 1, выйти - 2");
+                while (!scan.hasNextInt()) {
+                    view.View.print("Неправильный ввод");
+                    scan.next();
+                }
+                int scanInt = scan.nextInt();
+                if (scanInt == 1) {
+                    //метод рекурсии, думаю, будет уместен, т.к. наврятли
+                    //будет переполнение памяти
+                    run();
+                    bool = false;
+                } else if (scanInt == 2) {
+                    System.exit(0);
+                }
+            } while (bool);
+            return;
         } finally {
             try {
                 if (inputStream != null) {

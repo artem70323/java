@@ -13,13 +13,13 @@ import model.parseFile.ParserThread;
 public class Controller {
 
     Scanner scan = new Scanner(System.in);
-    BaseOfEmployees baseOfEmployees = BaseOfEmployees.getInstance();
+    public static BaseOfEmployees baseOfEmployees = BaseOfEmployees.getInstance();
     
     private static final String LINKXML = "http://kiparo.ru/t/birthdays.xml";
     private static final String LINKJSON = "http://kiparo.ru/t/birthdays.json";
     private static final String DOWNLOAD = "Выберите файл для скачки: 1 - XML, 2 - JSON";
     private static final String CYCLE = "Выберите дальнейшее действие: 1 - Вывод юбиляра,"
-            + " 2 - вывод среднего возраста, 3 - поиск сотрудника по дню\n рождения, "
+            + " 2 - вывод среднего возраста, 3 - поиск сотрудника по дню\nрождения, "
             + "4 - вывод сотрудников по их дню рождения, 5 - выход из программы";
     private static final String DATA = "Выберите поиск по дню - 1, "
             + "по месяцу - 2, по году - 3 или по дате - 4";
@@ -27,7 +27,7 @@ public class Controller {
     public void startProject() throws InterruptedException {
 
         download();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         cycle();
     }
 

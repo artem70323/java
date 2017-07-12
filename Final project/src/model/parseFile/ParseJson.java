@@ -1,13 +1,14 @@
 package model.parseFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import controller.Controller;
 import java.io.File;
 import model.baseOfEmployees.BaseOfEmployees;
 
 //используем библиотеку Jackson
 public class ParseJson extends ParserThread {
     
-    BaseOfEmployees baseOfEmployees = null;
+    BaseOfEmployees baseOfEmployees = BaseOfEmployees.getInstance();
     
     @Override
     public void parse() {
@@ -28,6 +29,7 @@ public class ParseJson extends ParserThread {
         try {
             ObjectMapper mapper = new ObjectMapper();
             baseOfEmployees = mapper.readValue(new File("Employee.json"), BaseOfEmployees.class);
+            Controller.baseOfEmployees = baseOfEmployees; 
         } catch (Exception ex) {
             view.View.print(ex.getMessage());
         }
