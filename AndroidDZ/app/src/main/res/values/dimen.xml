@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="textSize">30sp</dimen>
+
+    <dimen name="widthFlag">300dp</dimen>
+    <dimen name="heightAUT">200dp</dimen>
+    <dimen name="heightPOL">187.5dp</dimen>
+    <dimen name="heightITA">200dp</dimen>
+    <dimen name="heightCOL">200dp</dimen>
+    <dimen name="heightMDG">200dp</dimen>
+    <dimen name="heightPartMDG">100dp</dimen>
+    <dimen name="widthPartMDG">200dp</dimen>
+    <dimen name="heightTHA">200dp</dimen>
+    <dimen name="heightDNK">227dp</dimen>
+    <dimen name="crossDNK">32.4dp</dimen>
+    <dimen name="marginDNK">100dp</dimen>
+
+</resources>

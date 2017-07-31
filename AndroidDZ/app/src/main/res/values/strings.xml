@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AndroidDZ</string>
+    <string name="dz1Button">DZ1</string>
+    <string name="dz2Button">DZ2</string>
+    <string name="dz3Button">DZ3</string>
+    <string name="text1">Text1</string>
+    <string name="text2">Text2</string>
+
+    <string name="австрия">Австрия</string>
+    <string name="польша">Польша</string>
+    <string name="италия">Италия</string>
+    <string name="колумбия">Колумбия</string>
+    <string name="мадагаскар">Мадагаскар</string>
+    <string name="таиланд">Таиланд</string>
+    <string name="дания">Дания</string>
+
+    <string name="buttonDZ3">Loading Image From URL</string>
+    <string name="urlImage">http://minionomaniya.ru/wp-content/uploads/2015/09/%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%BC%D0%B8%D0%BD%D1%8C%D0%BE%D0%BD%D0%BE%D0%B2.jpg</string>
+
+</resources>
