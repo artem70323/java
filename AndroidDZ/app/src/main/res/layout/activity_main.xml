@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fire"
     tools:context="com.gmail.androiddz.main.MainActivity">
 
     <Button
@@ -14,22 +14,62 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:text="@string/dz1Button" />
+        android:background="@color/buttonColor"
+        android:elevation="0dp"
+        android:text="@string/dz1Button"
+        android:textColor="@color/textButtonColor" />
 
     <Button
         android:id="@+id/dz2Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/dz1Button"
+        android:layout_alignBaseline="@+id/dz1Button"
+        android:layout_alignBottom="@+id/dz1Button"
         android:layout_centerHorizontal="true"
-        android:text="@string/dz2Button" />
+        android:background="@color/buttonColor"
+        android:text="@string/dz2Button"
+        android:textColor="@color/textButtonColor" />
 
     <Button
         android:id="@+id/dz3Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/dz2Button"
         android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/dz2Button"
         android:layout_marginEnd="15dp"
-        android:text="@string/dz3Button" />
+        android:background="@color/buttonColor"
+        android:text="@string/dz3Button"
+        android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz4Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/dz1Button"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/buttonColor"
+        android:text="@string/dz4Button"
+        android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz5Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz2Button"
+        android:layout_alignTop="@+id/dz4Button"
+        android:background="@color/buttonColor"
+        android:text="@string/dz5Button"
+        android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz6Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz3Button"
+        android:layout_alignTop="@+id/dz5Button"
+        android:background="@color/buttonColor"
+        android:text="@string/dz6Button"
+        android:textColor="@color/textButtonColor" />
 </RelativeLayout>
