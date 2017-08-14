@@ -72,4 +72,25 @@
         android:background="@color/buttonColor"
         android:text="@string/dz6Button"
         android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz7Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz4Button"
+        android:layout_below="@+id/dz4Button"
+        android:layout_marginTop="15dp"
+        android:background="@color/buttonColor"
+        android:text="@string/dz7Button"
+        android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz9Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz6Button"
+        android:layout_alignTop="@+id/dz7Button"
+        android:background="@color/buttonColor"
+        android:text="@string/dz9Button"
+        android:textColor="@color/textButtonColor" />
 </RelativeLayout>
