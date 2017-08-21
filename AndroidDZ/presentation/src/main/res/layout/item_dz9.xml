@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        
+        <variable
+            name="viewModel"
+            type="com.gmail.androiddz.dz9.ItemViewModel"/>
+    </data>
+
+    <com.facebook.drawee.view.SimpleDraweeView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/tools"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:imageUrl="@{viewModel.imageUrl}"
+
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImage="@drawable/ic_sentiment_very_dissatisfied_black_100dp"
+        fresco:progressBarAutoRotateInterval="1000"
+        fresco:progressBarImage="@drawable/red_spin"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:viewAspectRatio="1">
+    </com.facebook.drawee.view.SimpleDraweeView>
+
+</layout>

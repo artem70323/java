@@ -1,42 +1,31 @@
 package com.gmail.androiddz.dz9;
 
-
-import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.gmail.androiddz.R;
 import com.gmail.androiddz.base.BaseActivity;
+import com.gmail.androiddz.databinding.ActivityDz9Binding;
 
 public class Dz9Activity extends BaseActivity {
 
-
-
-    private RecyclerView recyclerView;
-
-    private String[] android_image_urls;
+    private String[] androidImageUrls;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         Fresco.initialize(this);
-        setContentView(R.layout.activity_dz9);
-        initViews();
+        ActivityDz9Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_dz9);
         Dz9ViewModel viewModel = new Dz9ViewModel();
         this.viewModel = viewModel;
-        android_image_urls = viewModel.android_image_urls;
-    }
 
-    private void initViews() {
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 2);
-        recyclerView.setLayoutManager(layoutManager);
-        Dz9Adapter adapter = new Dz9Adapter(android_image_urls);
-        recyclerView.setAdapter(adapter);
+        super.onCreate(savedInstanceState);
+
+        androidImageUrls = viewModel.androidImageUrls;
+        binding.recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+        binding.recyclerView.setAdapter(new Dz9Adapter(androidImageUrls));
     }
 
 }

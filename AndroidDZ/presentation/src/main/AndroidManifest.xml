@@ -29,6 +29,7 @@
         <activity android:name=".dz6.Dz6Activity" />
         <activity android:name=".dz7.Dz7Activity" />
         <activity android:name=".dz9.Dz9Activity" />
+        <activity android:name=".dz10.Dz10Activity" />
 
         <service
             android:name=".dz5.MyService"

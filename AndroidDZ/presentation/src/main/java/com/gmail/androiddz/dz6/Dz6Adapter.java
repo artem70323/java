@@ -28,7 +28,7 @@ public class Dz6Adapter extends RecyclerView.Adapter<Dz6Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Uri uri = Uri.parse(android_image_urls[position]);
-        SimpleDraweeView draweeView = (SimpleDraweeView) viewHolder.img_android;
+        SimpleDraweeView draweeView = (SimpleDraweeView) viewHolder.imgAndroid;
         draweeView.setImageURI(uri);
     }
 
@@ -38,11 +38,11 @@ public class Dz6Adapter extends RecyclerView.Adapter<Dz6Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView img_android;
+        private ImageView imgAndroid;
 
         public ViewHolder(View view) {
             super(view);
-            img_android = (ImageView) view.findViewById(R.id.img_android);
+            imgAndroid = (ImageView) view.findViewById(R.id.img_android);
         }
     }
 

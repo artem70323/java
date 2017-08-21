@@ -7,9 +7,9 @@ import com.gmail.test.domain.interaction.base.UseCase;
 public class UrlUseCase extends UseCase<UrlList> {
 
     @Override
-    protected UrlList buildUseCase() {
+    public UrlList buildUseCase() {
         UrlList urlList = new UrlList();
-        urlList.setAndroid_image_urls(new String[]{"https://i01.fotocdn.net/s16/123/gallery_xs/259/30343802.jpg",
+        urlList.setAndroidImageUrls(new String[]{"https://i01.fotocdn.net/s16/123/gallery_xs/259/30343802.jpg",
                 "https://i01.fotocdn.net/s16/104/gallery_xs/233/9365607.jpg",
                 "https://i09.fotocdn.net/s8/205/gallery_m/159/2254347980.jpg",
                 "https://i10.fotocdn.net/s16/86/gallery_xs/493/9694293.jpg",

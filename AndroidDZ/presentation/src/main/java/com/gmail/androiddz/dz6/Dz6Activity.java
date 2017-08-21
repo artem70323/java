@@ -10,14 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.gmail.androiddz.R;
 
-import java.util.ArrayList;
-
 public class Dz6Activity extends Activity {
 
     private RecyclerView recyclerView;
-    private ArrayList<String> urlList = new ArrayList<>();
 
-    private final String[] android_image_urls = {
+    private final String[] ANDROID_IMAGE_URLS = {
             "https://i01.fotocdn.net/s16/123/gallery_xs/259/30343802.jpg",
             "https://i01.fotocdn.net/s16/104/gallery_xs/233/9365607.jpg",
             "https://i09.fotocdn.net/s8/205/gallery_m/159/2254347980.jpg",
@@ -53,7 +50,7 @@ public class Dz6Activity extends Activity {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        Dz6Adapter adapter = new Dz6Adapter(android_image_urls);
+        Dz6Adapter adapter = new Dz6Adapter(ANDROID_IMAGE_URLS);
         recyclerView.setAdapter(adapter);
     }
 

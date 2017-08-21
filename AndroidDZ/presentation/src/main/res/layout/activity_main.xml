@@ -93,4 +93,15 @@
         android:background="@color/buttonColor"
         android:text="@string/dz9Button"
         android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz10Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz7Button"
+        android:layout_below="@+id/dz7Button"
+        android:layout_marginTop="15dp"
+        android:background="@color/buttonColor"
+        android:text="@string/dz10Button"
+        android:textColor="@color/textButtonColor" />
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import com.gmail.androiddz.R;
 import com.gmail.androiddz.dz1.Dz1Activity;
+import com.gmail.androiddz.dz10.Dz10Activity;
 import com.gmail.androiddz.dz2.Dz2Activity;
 import com.gmail.androiddz.dz3.Dz3Activity;
 import com.gmail.androiddz.dz4.Dz4Activity;
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
         Button dz6Button = (Button) findViewById(R.id.dz6Button);
         Button dz7Button = (Button) findViewById(R.id.dz7Button);
         Button dz9Button = (Button) findViewById(R.id.dz9Button);
+        Button dz10Button = (Button) findViewById(R.id.dz10Button);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -70,6 +72,10 @@ public class MainActivity extends Activity {
                         intent = new Intent(MainActivity.this, Dz9Activity.class);
                         startActivity(intent);
                         break;
+                    case R.id.dz10Button:
+                        intent = new Intent(MainActivity.this, Dz10Activity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         };
@@ -82,6 +88,7 @@ public class MainActivity extends Activity {
         dz6Button.setOnClickListener(onClickListener);
         dz7Button.setOnClickListener(onClickListener);
         dz9Button.setOnClickListener(onClickListener);
+        dz10Button.setOnClickListener(onClickListener);
     }
 
 }

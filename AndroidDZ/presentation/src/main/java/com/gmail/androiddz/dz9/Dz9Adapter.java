@@ -1,48 +1,48 @@
 package com.gmail.androiddz.dz9;
 
-
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.gmail.androiddz.R;
+import com.gmail.androiddz.databinding.ItemDz9Binding;
 
 public class Dz9Adapter extends RecyclerView.Adapter<Dz9Adapter.ViewHolder> {
 
-    private String[] android_image_urls;
+    private String[] androidImageUrls;
 
-    public Dz9Adapter(String[] android_image_urls) {
-        this.android_image_urls = android_image_urls;
+    public Dz9Adapter(String[] androidImageUrls) {
+        this.androidImageUrls = androidImageUrls;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_layout, viewGroup, false);
-        return new ViewHolder(view);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        ItemDz9Binding itemBinding = ItemDz9Binding.inflate(layoutInflater, parent, false);
+        return new ViewHolder(itemBinding);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        Uri uri = Uri.parse(android_image_urls[position]);
-        SimpleDraweeView draweeView = (SimpleDraweeView) viewHolder.img_android;
-        draweeView.setImageURI(uri);
+        ItemViewModel itemViewModel = new ItemViewModel(androidImageUrls[position]);
+        viewHolder.bind(itemViewModel);
     }
 
     @Override
     public int getItemCount() {
-        return android_image_urls.length;
+        return androidImageUrls.length;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView img_android;
+        private final ItemDz9Binding binding;
 
-        public ViewHolder(View view) {
-            super(view);
-            img_android = (ImageView) view.findViewById(R.id.img_android);
+        public ViewHolder(ItemDz9Binding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        public void bind(ItemViewModel item) {
+            binding.setViewModel(item);
+            binding.executePendingBindings();
         }
     }
 
