@@ -13,6 +13,7 @@ android {
         buildConfigField "String", "API_ENDPOINT", '"https://api.spotify.com "'
     }
 
+
     buildTypes {
         release {
             minifyEnabled false

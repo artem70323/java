@@ -1,8 +1,8 @@
-package com.gmail.test.domain.interaction;
+package com.gmail.androiddz.domain.interaction;
 
 
-import com.gmail.test.domain.entity.UrlList;
-import com.gmail.test.domain.interaction.base.UseCase;
+import com.gmail.androiddz.domain.entity.UrlList;
+import com.gmail.androiddz.domain.interaction.oldBase.UseCase;
 
 public class UrlUseCase extends UseCase<UrlList> {
 

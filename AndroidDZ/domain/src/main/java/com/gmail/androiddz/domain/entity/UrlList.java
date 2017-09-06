@@ -1,4 +1,4 @@
-package com.gmail.test.domain.entity;
+package com.gmail.androiddz.domain.entity;
 
 
 public class UrlList {

@@ -9,6 +9,8 @@ import android.widget.Button;
 import com.gmail.androiddz.R;
 import com.gmail.androiddz.dz1.Dz1Activity;
 import com.gmail.androiddz.dz10.Dz10Activity;
+import com.gmail.androiddz.dz11.Dz11Activity;
+import com.gmail.androiddz.dz13.Dz13Activity;
 import com.gmail.androiddz.dz2.Dz2Activity;
 import com.gmail.androiddz.dz3.Dz3Activity;
 import com.gmail.androiddz.dz4.Dz4Activity;
@@ -34,6 +36,8 @@ public class MainActivity extends Activity {
         Button dz7Button = (Button) findViewById(R.id.dz7Button);
         Button dz9Button = (Button) findViewById(R.id.dz9Button);
         Button dz10Button = (Button) findViewById(R.id.dz10Button);
+        Button dz11Button = (Button) findViewById(R.id.dz11Button);
+        Button dz13Button = (Button) findViewById(R.id.dz13Button);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -76,6 +80,14 @@ public class MainActivity extends Activity {
                         intent = new Intent(MainActivity.this, Dz10Activity.class);
                         startActivity(intent);
                         break;
+                    case R.id.dz11Button:
+                        intent = new Intent(MainActivity.this, Dz11Activity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.dz13Button:
+                        intent = new Intent(MainActivity.this, Dz13Activity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         };
@@ -89,6 +101,8 @@ public class MainActivity extends Activity {
         dz7Button.setOnClickListener(onClickListener);
         dz9Button.setOnClickListener(onClickListener);
         dz10Button.setOnClickListener(onClickListener);
+        dz11Button.setOnClickListener(onClickListener);
+        dz13Button.setOnClickListener(onClickListener);
     }
 
 }

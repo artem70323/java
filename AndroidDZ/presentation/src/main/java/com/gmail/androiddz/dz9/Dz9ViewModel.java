@@ -1,8 +1,8 @@
 package com.gmail.androiddz.dz9;
 
 import com.gmail.androiddz.base.BaseViewModel;
-import com.gmail.test.domain.entity.UrlList;
-import com.gmail.test.domain.interaction.UrlUseCase;
+import com.gmail.androiddz.domain.entity.UrlList;
+import com.gmail.androiddz.domain.interaction.UrlUseCase;
 
 public class Dz9ViewModel implements BaseViewModel {
 

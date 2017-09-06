@@ -2,6 +2,7 @@ package com.gmail.androiddz.base;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 
 public abstract class BaseActivity extends Activity {
@@ -9,7 +10,7 @@ public abstract class BaseActivity extends Activity {
     protected BaseViewModel viewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel.init();
     }

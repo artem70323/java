@@ -1,4 +1,4 @@
-package com.gmail.test.domain.interaction.base;
+package com.gmail.androiddz.domain.interaction.oldBase;
 
 
 public abstract class UseCase<OutParam> {

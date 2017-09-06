@@ -27,7 +27,7 @@ public class Dz10ViewModel implements BaseViewModel {
 
     @Override
     public void resume() {
-        disposable = (Disposable) Observable.interval(1, TimeUnit.SECONDS)
+        disposable = Observable.interval(1, TimeUnit.SECONDS)
                 .filter(new Predicate<Long>() {
                     @Override
                     public boolean test(@NonNull Long aLong) throws Exception {
