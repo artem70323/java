@@ -15,13 +15,11 @@ public class Dz13Activity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dz13);
 
-//        FragmentManager fragmentManager = getSupportFragmentManager();
         showFragment(getSupportFragmentManager(), Dz13Fragment.newInstance());
     }
 
     private void showFragment(FragmentManager fragmentManager, Fragment fragment) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         fragmentTransaction.replace(R.id.container, fragment, fragment.getClass().getName());
         fragmentTransaction.commit();
     }

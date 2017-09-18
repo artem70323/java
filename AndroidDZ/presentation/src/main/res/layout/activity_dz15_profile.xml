@@ -21,18 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_sentiment_very_dissatisfied_black_100dp"
-            android:visibility="@{profile.state == STATE.ERROR ? View.VISIBLE : View.GONE}" />
-
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="@{profile.state == STATE.PROGRESS ? View.VISIBLE : View.GONE}" />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -121,46 +109,26 @@
                     android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"
                     tools:text="25" />
 
-                <EditText
+                <Spinner
+                    android:id="@+id/spinnerDz15"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/background_light"
-                    android:inputType="number"
-                    android:text="@={profile.age}"
-                    android:textColor="?android:attr/textColorSecondary"
-                    android:textSize="30sp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
                     android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}" />
             </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="#a69f7b2d"
+                android:onClick="@{() -> handler.onSaveProfile(profile)}"
+                android:text="Save"
+                android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}" />
 
-
-                <Button
-                    android:id="@+id/editButton"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:background="#a69f7b2d"
-                    android:onClick="@{() -> handler.onProfileEdit(profile)}"
-                    android:text="Edit"
-                    android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}" />
-
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="#a69f7b2d"
-                    android:onClick="@{() -> handler.onSaveProfile(profile)}"
-                    android:text="Save"
-                    android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}" />
-            </RelativeLayout>
         </LinearLayout>
     </FrameLayout>
 

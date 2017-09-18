@@ -4,8 +4,6 @@
 
     <data>
 
-        <import type="android.support.v4.app.Fragment" />
-
         <variable
             name="user"
             type="com.gmail.androiddz.dz13.Dz13User" />

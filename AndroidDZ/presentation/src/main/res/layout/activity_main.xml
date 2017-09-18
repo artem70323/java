@@ -125,4 +125,24 @@
         android:background="@color/buttonColor"
         android:text="@string/dz13Button"
         android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz14Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz11Button"
+        android:layout_alignTop="@+id/dz13Button"
+        android:background="@color/buttonColor"
+        android:text="@string/dz14Button"
+        android:textColor="@color/textButtonColor" />
+
+    <Button
+        android:id="@+id/dz15Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dz9Button"
+        android:layout_alignTop="@+id/dz14Button"
+        android:background="@color/buttonColor"
+        android:text="@string/dz15Button"
+        android:textColor="@color/textButtonColor" />
 </RelativeLayout>

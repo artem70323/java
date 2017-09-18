@@ -21,8 +21,7 @@ public class Dz13Fragment extends Fragment {
 
 
     public static Dz13Fragment newInstance() {
-        Dz13Fragment fragment = new Dz13Fragment();
-        return fragment;
+        return new Dz13Fragment();
     }
 
     @Override

@@ -33,6 +33,8 @@
         <activity android:name=".dz11.Dz11Activity" />
         <activity android:name=".dz11.details.ProfileActivity" />
         <activity android:name=".dz13.Dz13Activity" />
+        <activity android:name=".dz14.Dz14Activity" />
+        <activity android:name=".dz15.Dz15Activity" />
 
         <service
             android:name=".dz5.MyService"

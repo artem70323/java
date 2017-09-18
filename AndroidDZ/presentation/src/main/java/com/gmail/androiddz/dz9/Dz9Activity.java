@@ -24,6 +24,7 @@ public class Dz9Activity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         androidImageUrls = viewModel.androidImageUrls;
+        binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         binding.recyclerView.setAdapter(new Dz9Adapter(androidImageUrls));
     }
