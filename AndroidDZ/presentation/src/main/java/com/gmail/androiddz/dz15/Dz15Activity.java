@@ -12,7 +12,6 @@ import com.gmail.androiddz.databinding.ActivityDz15Binding;
 public class Dz15Activity extends BaseActivity {
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -25,7 +24,7 @@ public class Dz15Activity extends BaseActivity {
 //        binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(viewModel.adapter);
-
+        binding.setHandler(new ClickHandler(this));
     }
 
 }

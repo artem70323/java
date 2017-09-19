@@ -40,9 +40,20 @@ class DBHelper extends SQLiteOpenHelper {
         sql.append("', ");
         sql.append(24);
         sql.append(", '");
-        sql.append("by");
+        sql.append("BY");
         sql.append("')");
         db.execSQL(sql.toString());
+
+        sql.setLength(0);
+        sql.append("INSERT INTO country ('id', 'name')");
+        sql.append("VALUES (");
+        sql.append("'");
+        sql.append("BY");
+        sql.append("', '");
+        sql.append("Belarus");
+        sql.append("')");
+        db.execSQL(sql.toString());
+
     }
 
     @Override

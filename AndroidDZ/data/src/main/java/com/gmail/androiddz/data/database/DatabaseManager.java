@@ -45,14 +45,24 @@ public class DatabaseManager {
         sql.append(user.getName());
         sql.append("', ");
         sql.append(user.getAge());
-        sql.append(", ");
+        sql.append(", '");
         sql.append(user.getCountry().getId());
-        sql.append(")");
+        sql.append("')");
 
 //        INSERT INTO user ('name', 'age', 'countryId') VALUES ('Name', 25, 0);
 
 
         Log.e("DatabaseManager", "insertUser() sql = " + sql.toString());
+        database.execSQL(sql.toString());
+
+        sql.setLength(0);
+        sql.append("INSERT OR IGNORE INTO country ('id', 'name')");
+        sql.append("VALUES (");
+        sql.append("'");
+        sql.append(user.getCountry().getId());
+        sql.append("', '");
+        sql.append(user.getCountry().getName());
+        sql.append("')");
         database.execSQL(sql.toString());
     }
 
@@ -72,6 +82,7 @@ public class DatabaseManager {
                 list.add(user);
             } while (cursor.moveToNext());
             Log.e("Cursor", String.valueOf(list.size()));
+            cursor.close();
             return list;
         } else {
             return null;
@@ -81,7 +92,7 @@ public class DatabaseManager {
     public User getUserById(int id) {
 
         Cursor cursor = database.rawQuery("SELECT * FROM user INNER JOIN country ON " +
-                        "user.countryId = country.id WHERE id = ?",
+                        "user.countryId = country.id WHERE user.id = ?",
                 new String[]{String.valueOf(id)});
 //        Cursor cursor = database.rawQuery("SELECT * FROM user WHERE id = " + id, null);
 
@@ -94,7 +105,7 @@ public class DatabaseManager {
             String name = cursor.getString(1);
             int age = cursor.getInt(2);
             String countryId = cursor.getString(3);
-            String countryName = cursor.getString(4);
+            String countryName = cursor.getString(5);
 
             //заполняем объект User
             user.setId(userId);
@@ -108,7 +119,7 @@ public class DatabaseManager {
 
             //добавляем объект Country в User
             user.setCountry(country);
-
+            cursor.close();
             return user;
         } else {
             Log.e("DatabaseManager", "getUserById() cursor is null");

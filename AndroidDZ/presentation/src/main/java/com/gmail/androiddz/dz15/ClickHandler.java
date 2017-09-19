@@ -2,11 +2,10 @@ package com.gmail.androiddz.dz15;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import com.gmail.androiddz.domain.entity.ProfileId;
-import com.gmail.androiddz.dz11.details.ProfileActivity;
-import com.gmail.androiddz.dz11.details.ProfileViewModel;
+import com.gmail.androiddz.domain.entity.ProfileIdSql;
+import com.gmail.androiddz.dz15.details.ProfileViewModel;
+import com.gmail.androiddz.dz15.details.ProfileActivity;
 
 public class ClickHandler {
     private Context context;
@@ -15,15 +14,16 @@ public class ClickHandler {
         this.context = context;
     }
 
-    public void onItemClick(ProfileId id) {
-        Log.e("AAAA", "onItemClick");
+    public void onItemClick(ProfileIdSql id) {
         Intent intent = new Intent(context, ProfileActivity.class);
         intent.putExtra("ID", id.getId());
         context.startActivity(intent);
     }
 
-    public void onProfileEdit(ProfileViewModel profile) {
-        profile.state.set(ProfileViewModel.STATE.EDIT);
+    public void addUser() {
+        Intent intent = new Intent(context, ProfileActivity.class);
+        intent.putExtra("ID", -666);
+        context.startActivity(intent);
     }
 
     public void onSaveProfile(ProfileViewModel profile) {

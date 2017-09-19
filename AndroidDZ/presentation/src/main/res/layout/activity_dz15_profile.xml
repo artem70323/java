@@ -4,17 +4,17 @@
 
     <data>
 
-        <import type="com.gmail.androiddz.dz11.details.ProfileViewModel.STATE" />
+        <import type="com.gmail.androiddz.dz15.details.ProfileViewModel.STATE" />
 
         <import type="android.view.View" />
 
         <variable
             name="profile"
-            type="com.gmail.androiddz.dz11.details.ProfileViewModel" />
+            type="com.gmail.androiddz.dz15.details.ProfileViewModel" />
 
         <variable
             name="handler"
-            type="com.gmail.androiddz.dz11.ClickHandler" />
+            type="com.gmail.androiddz.dz15.ClickHandler" />
     </data>
 
     <FrameLayout
@@ -74,17 +74,18 @@
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:gravity="top|center_horizontal"
-                    android:text="@{profile.surname}"
+                    android:text="@{String.valueOf(profile.age)}"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="30sp"
                     android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"
-                    tools:text="Surname" />
+                    tools:text="99" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/background_light"
-                    android:text="@={profile.surname}"
+                    android:inputType="number"
+                    android:text="@={profile.age}"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="30sp"
                     android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}" />
@@ -103,7 +104,7 @@
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:gravity="top|center_horizontal"
-                    android:text="@{String.valueOf(profile.age)}"
+                    android:text="@{profile.country}"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="30sp"
                     android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"
