@@ -1,7 +1,8 @@
 package com.gmail.androiddz.domain.interaction;
 
+
 import com.gmail.androiddz.data.entity.ProfileData;
-import com.gmail.androiddz.data.net.RestService;
+import com.gmail.androiddz.data.repository.UsersRepository;
 import com.gmail.androiddz.domain.entity.ProfileDomain;
 import com.gmail.androiddz.domain.entity.ProfileId;
 import com.gmail.androiddz.domain.interaction.base.UseCase;
@@ -13,11 +14,11 @@ import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 
-public class GetProfilesListUseCase extends UseCase<ProfileId, List<ProfileDomain>> {
+public class GetProfilesListUseCase extends UseCase<UsersRepository, List<ProfileDomain>> {
 
     @Override
-    protected Observable<List<ProfileDomain>> buildUseCase(ProfileId param) {
-        return RestService.getInstance().getProfiles()
+    protected Observable<List<ProfileDomain>> buildUseCase(UsersRepository repository) {
+        return repository.getProfiles()
                 .map(new Function<List<ProfileData>, List<ProfileDomain>>() {
                     @Override
                     public List<ProfileDomain> apply(@NonNull List<ProfileData> profiles) throws Exception {
@@ -38,3 +39,43 @@ public class GetProfilesListUseCase extends UseCase<ProfileId, List<ProfileDomai
     }
 
 }
+
+
+
+//
+//public class GetProfilesListUseCase extends UseCase<Context, List<ProfileDomain>> {
+//
+//    @Override
+//    protected Observable<List<ProfileDomain>> buildUseCase(Context context) {
+//        if (hasConnection(context)) {
+//            return cloudUsers();
+//        }
+//        return null;
+//    }
+//
+//    public boolean hasConnection(final Context context) {
+//        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+//        if (activeNetwork != null) { // connected to the internet
+//            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+//                return true;
+//            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+//
+//    private Observable<List<ProfileDomain>> cloudUsers() {
+//        return RestService.getInstance().getProfiles()
+//                .map(new Function<List<ProfileData>, List<ProfileDomain>>() {
+//                    @Override
+//                    public List<ProfileDomain> apply(@NonNull List<ProfileData> profiles) throws Exception {
+//                        List<ProfileDomain> list = new ArrayList<>();
+//                        for (ProfileData profile : profiles) {
+//                            list.add(convert(profile));
+//                        }
+//                        return list;
+//                    }
+//                });
+//    }

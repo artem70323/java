@@ -3,6 +3,8 @@ package com.gmail.androiddz;
 import android.app.Application;
 import com.squareup.leakcanary.LeakCanary;
 
+import io.realm.Realm;
+
 
 public class TestApplication extends Application {
 
@@ -13,6 +15,7 @@ public class TestApplication extends Application {
             return;
         }
         LeakCanary.install(this);
+        Realm.init(this);
     }
 
 }

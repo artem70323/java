@@ -4,6 +4,7 @@ import com.gmail.androiddz.data.entity.ProfileData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -68,5 +69,6 @@ public class RestService {
     public Observable<ProfileData> overwriteProfile(ProfileData profile) {
         return restApi.overwriteProfile(profile, profile.getId());
     }
+
 }
 

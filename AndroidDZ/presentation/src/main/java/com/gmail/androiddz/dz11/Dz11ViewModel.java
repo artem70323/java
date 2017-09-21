@@ -5,6 +5,7 @@ import android.databinding.ObservableField;
 import android.util.Log;
 
 import com.gmail.androiddz.base.BaseViewModel;
+import com.gmail.androiddz.data.repository.UsersDataRepository;
 import com.gmail.androiddz.domain.entity.ProfileDomain;
 import com.gmail.androiddz.domain.interaction.GetProfilesListUseCase;
 
@@ -33,7 +34,8 @@ public class Dz11ViewModel implements BaseViewModel {
     @Override
     public void resume() {
 
-        getProfileListUseCase.execute(null, new DisposableObserver<List<ProfileDomain>>(){
+        getProfileListUseCase.execute
+                (new UsersDataRepository(activity), new DisposableObserver<List<ProfileDomain>>(){
 
             @Override
             public void onNext(List<ProfileDomain> profileModels) {
@@ -43,12 +45,12 @@ public class Dz11ViewModel implements BaseViewModel {
 
             @Override
             public void onError(Throwable e) {
-                Log.e("AAAA items = ", e.toString());
+                Log.e("onError = ", e.toString());
             }
 
             @Override
             public void onComplete() {
-                Log.e("AAAA item", "onComplete");
+                Log.e("onComplete", "onComplete");
             }
         });
     }

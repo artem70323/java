@@ -2,7 +2,11 @@ package com.gmail.androiddz.data.entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ProfileData {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+
+public class ProfileData extends RealmObject {
 
     @SerializedName("Name")
     private String name;
@@ -13,6 +17,7 @@ public class ProfileData {
     @SerializedName("Age")
     private int age;
 
+    @PrimaryKey
     @SerializedName("objectId")
     private String id;
 
