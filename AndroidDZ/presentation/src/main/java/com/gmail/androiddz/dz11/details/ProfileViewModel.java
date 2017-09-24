@@ -14,6 +14,8 @@ import com.gmail.androiddz.domain.entity.ProfileId;
 import com.gmail.androiddz.domain.interaction.GetProfileUseCase;
 import com.gmail.androiddz.domain.interaction.OverwriteProfileUseCase;
 
+import javax.inject.Inject;
+
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
 
@@ -29,11 +31,13 @@ public class ProfileViewModel implements BaseViewModel{
     public enum STATE {PROGRESS, DATA, ERROR, EDIT}
     public ObservableField<STATE> state = new ObservableField<>(STATE.PROGRESS);
 
-    private GetProfileUseCase getProfileUseCase = new GetProfileUseCase();
+    private GetProfileUseCase getProfileUseCase;
     private OverwriteProfileUseCase saveProfileUseCase = new OverwriteProfileUseCase();
 
-    public ProfileViewModel(String id) {
+    @Inject
+    public ProfileViewModel(String id, GetProfileUseCase getProfileUseCase) {
         this.id = new ProfileId(id);
+        this.getProfileUseCase = getProfileUseCase;
     }
 
     @Override

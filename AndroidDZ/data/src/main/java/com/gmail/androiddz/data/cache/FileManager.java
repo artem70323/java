@@ -9,11 +9,13 @@ import com.gmail.androiddz.data.entity.ProfileData;
 
 import java.util.List;
 
+
 import io.realm.Realm;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public class FileManager {
+
+    FileManager() {}
 
     private Realm realm;
 

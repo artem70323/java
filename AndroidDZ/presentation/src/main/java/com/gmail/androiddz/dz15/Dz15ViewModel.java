@@ -5,6 +5,7 @@ import android.content.Context;
 import com.gmail.androiddz.base.BaseViewModel;
 import com.gmail.androiddz.domain.entity.ProfileDomainSql;
 import com.gmail.androiddz.domain.interaction.GetProfilesListSqlUseCase;
+import com.gmail.androiddz.dz15.details.ProfileViewModel;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ public class Dz15ViewModel implements BaseViewModel {
 
     private Context context;
     private GetProfilesListSqlUseCase profilesListSqlUseCase = new GetProfilesListSqlUseCase();
-    Dz15Adapter adapter = new Dz15Adapter();
+    Dz15Adapter adapter = Dz15Adapter.getInstance();
 
     public Dz15ViewModel(Context context) {
         this.context = context;

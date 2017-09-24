@@ -12,7 +12,15 @@ import java.util.ArrayList;
 
 public class Dz15Adapter extends RecyclerView.Adapter<Dz15Adapter.ViewHolder> {
 
-    private ArrayList<ProfileDomainSql> domainSqls = new ArrayList<>();
+    private static Dz15Adapter adapter = new Dz15Adapter();
+
+    private Dz15Adapter() {}
+
+    public static Dz15Adapter getInstance(){
+        return adapter;
+    }
+
+    private static ArrayList<ProfileDomainSql> domainSqls = new ArrayList<>();
 
     public void setDomainSqls(ArrayList<ProfileDomainSql> domainSql) {
         domainSqls.clear();
@@ -20,6 +28,12 @@ public class Dz15Adapter extends RecyclerView.Adapter<Dz15Adapter.ViewHolder> {
 //        notifyDataSetChanged();
 
     }
+
+    public void addItem(ProfileDomainSql domainSql) {
+        domainSqls.add(domainSql);
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

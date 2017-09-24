@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import io.reactivex.Observable;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -15,6 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+@Singleton
 public class RestService {
 
     public static final String BASE_URL = "https://api.backendless.com/0880AB28-FBCA-C505-FF7D-9FA3E0709B00/2241F27B-8E51-36FE-FFD9-F47F2F8E1900/";
@@ -23,7 +27,8 @@ public class RestService {
 
     private RestApi restApi;
 
-    private RestService(){
+    @Inject
+    RestService(){
         init();
     }
 

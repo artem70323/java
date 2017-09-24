@@ -6,19 +6,23 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 
+import com.gmail.androiddz.TestApplication;
 import com.gmail.androiddz.base.BaseActivity;
 import com.gmail.androiddz.databinding.ActivityDz11Binding;
 
+import javax.inject.Inject;
+
 public class Dz11Activity extends BaseActivity {
 
+    @Inject
+    Dz11ViewModel viewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        TestApplication.appComponent.inject(this);
 
-        Dz11ViewModel viewModel = new Dz11ViewModel(this);
-        this.viewModel = viewModel;
+        super.viewModel = viewModel;
 
         ActivityDz11Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_dz11);
 

@@ -9,6 +9,10 @@ import com.gmail.androiddz.data.entity.ProfileData;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+@Singleton
 public class Cache {
 
     private static final long EXPIRATION_TIME = 60 * 10 * 1000;
@@ -18,7 +22,8 @@ public class Cache {
     private Context context;
     private FileManager fileManager = new FileManager();
 
-    public Cache(Context context) {
+    @Inject
+    Cache(Context context) {
         this.context = context;
     }
 

@@ -14,6 +14,7 @@ import com.gmail.androiddz.domain.entity.ProfileDomainSql;
 import com.gmail.androiddz.domain.entity.ProfileIdSql;
 import com.gmail.androiddz.domain.interaction.AddUserToDatabaseUseCase;
 import com.gmail.androiddz.domain.interaction.GetProfileSqlUseCase;
+import com.gmail.androiddz.dz15.Dz15Adapter;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
@@ -23,6 +24,7 @@ public class ProfileViewModel implements BaseViewModel {
     private static final String TAG = ProfileViewModel.class.getSimpleName();
     private ProfileIdSql id = null;
     Context context;
+    public static Dz15Adapter adapter = Dz15Adapter.getInstance();
 
     public ObservableField<String> name = new ObservableField<>("");
     public ObservableInt age = new ObservableInt();
@@ -90,6 +92,7 @@ public class ProfileViewModel implements BaseViewModel {
         domainProfile.setName(name.get());
         domainProfile.setAge(age.get());
         domainProfile.setCountry(SpinnerViewModel.countryDomain);
+        adapter.addItem(domainProfile);
         addUserToDatabaseUseCase.execute(domainProfile, new DisposableObserver<Void>() {
             @Override
             public void onNext(@NonNull Void aVoid) {

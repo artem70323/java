@@ -8,11 +8,11 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
-public class DiskUsersDataStore implements UsersDataStore {
+class DiskUsersDataStore implements UsersDataStore {
 
     private final Cache cache;
 
-    public DiskUsersDataStore(Cache cache) {
+    DiskUsersDataStore(Cache cache) {
         this.cache = cache;
     }
 

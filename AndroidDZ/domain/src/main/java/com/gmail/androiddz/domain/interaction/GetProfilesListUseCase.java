@@ -10,14 +10,23 @@ import com.gmail.androiddz.domain.interaction.base.UseCase;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 
-public class GetProfilesListUseCase extends UseCase<UsersRepository, List<ProfileDomain>> {
+public class GetProfilesListUseCase extends UseCase<Void, List<ProfileDomain>> {
+
+    UsersRepository repository;
+
+    @Inject
+    public GetProfilesListUseCase(UsersRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
-    protected Observable<List<ProfileDomain>> buildUseCase(UsersRepository repository) {
+    protected Observable<List<ProfileDomain>> buildUseCase(Void aVoid) {
         return repository.getProfiles()
                 .map(new Function<List<ProfileData>, List<ProfileDomain>>() {
                     @Override

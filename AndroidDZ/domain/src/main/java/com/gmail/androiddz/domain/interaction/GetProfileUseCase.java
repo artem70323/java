@@ -6,15 +6,24 @@ import com.gmail.androiddz.data.net.RestService;
 import com.gmail.androiddz.domain.entity.ProfileDomain;
 import com.gmail.androiddz.domain.entity.ProfileId;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 
 public class GetProfileUseCase extends UseCase<ProfileId, ProfileDomain> {
 
+    private RestService restService;
+
+    @Inject
+    public GetProfileUseCase(RestService restService) {
+        this.restService = restService;
+    }
+
     @Override
     protected Observable<ProfileDomain> buildUseCase(ProfileId profileId) {
-        return RestService.getInstance().getProfile(profileId.getId())
+        return restService.getProfile(profileId.getId())
                 .map(new Function<ProfileData, ProfileDomain>() {
                     @Override
                     public ProfileDomain apply(@NonNull ProfileData profileData) throws Exception {
