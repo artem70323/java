@@ -20,11 +20,12 @@ public class Cache {
     private static final String SETTINGS_KEY_LAST_CACHE_UPDATE = "lastCacheUpdate";
 
     private Context context;
-    private FileManager fileManager = new FileManager();
+    private FileManager fileManager;
 
     @Inject
-    Cache(Context context) {
+    public Cache(Context context, FileManager fileManager) {
         this.context = context;
+        this.fileManager = fileManager;
     }
 
     public void put(List<ProfileData> dataList) {

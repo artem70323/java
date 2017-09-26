@@ -18,7 +18,7 @@ import io.reactivex.functions.Function;
 
 public class GetProfilesListUseCase extends UseCase<Void, List<ProfileDomain>> {
 
-    UsersRepository repository;
+    private UsersRepository repository;
 
     @Inject
     public GetProfilesListUseCase(UsersRepository repository) {

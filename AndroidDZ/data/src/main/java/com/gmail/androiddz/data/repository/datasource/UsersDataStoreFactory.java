@@ -12,10 +12,12 @@ import javax.inject.Singleton;
 public class UsersDataStoreFactory {
 
     private Cache cache;
+    private CloudUsersDataStore cloudUsersDataStore;
 
     @Inject
-    public UsersDataStoreFactory(Cache cache) {
+    public UsersDataStoreFactory(Cache cache, CloudUsersDataStore cloudUsersDataStore) {
         this.cache = cache;
+        this.cloudUsersDataStore = cloudUsersDataStore;
     }
 
     public UsersDataStore create() {
@@ -27,7 +29,7 @@ public class UsersDataStoreFactory {
             usersDataStore = new DiskUsersDataStore(cache);
         } else {
             Log.e("create", "CloudUsersDataStore");
-            usersDataStore = new CloudUsersDataStore(cache);
+            usersDataStore = cloudUsersDataStore;
         }
         return usersDataStore;
     }

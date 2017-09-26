@@ -8,6 +8,7 @@ import com.gmail.androiddz.TestApplication;
 import com.gmail.androiddz.base.BaseActivity;
 import com.gmail.androiddz.databinding.ActivityDz11ProfileBinding;
 import com.gmail.androiddz.domain.interaction.GetProfileUseCase;
+import com.gmail.androiddz.domain.interaction.OverwriteProfileUseCase;
 import com.gmail.androiddz.dz11.ClickHandler;
 
 import javax.inject.Inject;
@@ -15,14 +16,16 @@ import javax.inject.Inject;
 public class ProfileActivity extends BaseActivity {
 
     @Inject
-    GetProfileUseCase getProfileUseCase;
+    GetProfileUseCase getProfile;
+    @Inject
+    OverwriteProfileUseCase overwriteProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TestApplication.appComponent.inject(this);
+        ((TestApplication)getApplication()).getAppComponent().inject(this);
 
         String id = getIntent().getStringExtra("ID");
-        ProfileViewModel viewModel = new ProfileViewModel(id, getProfileUseCase);
+        ProfileViewModel viewModel = new ProfileViewModel(id, getProfile, overwriteProfile);
 
         this.viewModel = viewModel;
 

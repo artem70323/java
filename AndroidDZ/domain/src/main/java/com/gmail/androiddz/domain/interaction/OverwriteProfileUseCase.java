@@ -5,14 +5,24 @@ import com.gmail.androiddz.data.entity.ProfileData;
 import com.gmail.androiddz.data.net.RestService;
 import com.gmail.androiddz.domain.entity.ProfileDomain;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import io.reactivex.Observable;
 
+@Singleton
 public class OverwriteProfileUseCase extends UseCase<ProfileDomain, ProfileData> {
 
+    private RestService restService;
+
+    @Inject
+    public OverwriteProfileUseCase(RestService restService) {
+        this.restService = restService;
+    }
 
     @Override
     protected Observable<ProfileData> buildUseCase(ProfileDomain profileDomain) {
-        return RestService.getInstance().overwriteProfile(convert(profileDomain));
+        return restService.overwriteProfile(convert(profileDomain));
     }
 
     private ProfileData convert(ProfileDomain profileDomain) {

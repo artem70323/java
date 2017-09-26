@@ -32,12 +32,12 @@ public class ProfileViewModel implements BaseViewModel{
     public ObservableField<STATE> state = new ObservableField<>(STATE.PROGRESS);
 
     private GetProfileUseCase getProfileUseCase;
-    private OverwriteProfileUseCase saveProfileUseCase = new OverwriteProfileUseCase();
+    private OverwriteProfileUseCase saveProfileUseCase;
 
-    @Inject
-    public ProfileViewModel(String id, GetProfileUseCase getProfileUseCase) {
+    public ProfileViewModel(String id, GetProfileUseCase getProfile, OverwriteProfileUseCase save) {
         this.id = new ProfileId(id);
-        this.getProfileUseCase = getProfileUseCase;
+        this.getProfileUseCase = getProfile;
+        saveProfileUseCase = save;
     }
 
     @Override

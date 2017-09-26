@@ -20,7 +20,7 @@ public class Dz11Activity extends BaseActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        TestApplication.appComponent.inject(this);
+        ((TestApplication)getApplication()).getAppComponent().inject(this);
 
         super.viewModel = viewModel;
 

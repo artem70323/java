@@ -12,7 +12,7 @@ import io.realm.Realm;
 
 public class TestApplication extends Application {
 
-    public static AppComponent appComponent;
+    private AppComponent appComponent;
 
     @Override
     public void onCreate() {
@@ -30,4 +30,7 @@ public class TestApplication extends Application {
                 .build();
     }
 
+    public AppComponent getAppComponent() {
+        return appComponent;
+    }
 }
