@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">Football Data</string>
+
+    <string name="teams">Teams</string>
+    <string name="leagueTable">League Table</string>
+    <string name="fixtures">Fixtures</string>
+
+</resources>

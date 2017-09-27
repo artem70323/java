@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="competition"
+            type="com.artyombash.presentation.viewModel.CompetitionItemViewModel" />
+
+        <variable
+            name="handler"
+            type="com.artyombash.presentation.ClickHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#55ffffff">
+
+        <TextView
+            android:id="@+id/caption"
+            style="@style/AppTheme.TextViewTitle"
+            android:text="@{`Caption: ` + competition.caption}" />
+
+
+        <TextView
+            android:id="@+id/league"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/caption"
+            android:text="@{`League: ` + competition.league}" />
+
+
+        <TextView
+            android:id="@+id/year"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/league"
+            android:text="@{`Year: ` + competition.year}" />
+
+
+        <TextView
+            android:id="@+id/currentMatchday"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/year"
+            android:text="@{`Current Matchday: ` + competition.currentMatchday}" />
+
+
+        <TextView
+            android:id="@+id/numberOfMatchdays"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/currentMatchday"
+            android:text="@{`Number Of Matchdays: ` + competition.numberOfMatchdays}" />
+
+
+        <TextView
+            android:id="@+id/numberOfTeams"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/numberOfMatchdays"
+            android:text="@{`Number Of Teams: ` + competition.numberOfTeams}" />
+
+
+        <TextView
+            android:id="@+id/numberOfGames"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/numberOfTeams"
+            android:text="@{`Number Of Games: ` + competition.numberOfGames}" />
+
+
+        <TextView
+            android:id="@+id/lastUpdated"
+            style="@style/AppTheme.TextViewTitle"
+            android:layout_below="@+id/numberOfGames"
+            android:text="@{`Last Updated: ` + competition.lastUpdated}" />
+
+        <Button
+            android:id="@+id/teamsButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lastUpdated"
+            android:text="@string/teams" />
+
+        <Button
+            android:id="@+id/leagueTableButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lastUpdated"
+            android:layout_centerInParent="true"
+            android:text="@string/leagueTable" />
+
+        <Button
+            android:id="@+id/fixturesButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/lastUpdated"
+            android:text="@string/fixtures" />
+
+    </RelativeLayout>
+
+</layout>
